@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vendor_name: MyString
+  vendor_description: MyText
+  vendor_rating: MyString
+
+two:
+  vendor_name: MyString
+  vendor_description: MyText
+  vendor_rating: MyString
