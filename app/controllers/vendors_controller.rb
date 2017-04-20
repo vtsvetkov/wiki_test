@@ -1,30 +1,22 @@
 class VendorsController < ApplicationController
   before_action :set_vendor, only: [:show, :edit, :update, :destroy]
-
-  # GET /vendors
-  # GET /vendors.json
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @vendors = Vendor.all
   end
 
-  # GET /vendors/1
-  # GET /vendors/1.json
   def show
   end
 
-  # GET /vendors/new
   def new
-    @vendor = Vendor.new
+    @vendor = current_user.vendors.build
   end
 
-  # GET /vendors/1/edit
   def edit
   end
 
-  # POST /vendors
-  # POST /vendors.json
   def create
-    @vendor = Vendor.new(vendor_params)
+    @vendor = current_user.vendors.build(vendor_params)
 
     respond_to do |format|
       if @vendor.save
@@ -37,8 +29,6 @@ class VendorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /vendors/1
-  # PATCH/PUT /vendors/1.json
   def update
     respond_to do |format|
       if @vendor.update(vendor_params)
