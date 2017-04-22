@@ -1,3 +1,22 @@
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+    <h2>Your Favorite Integrations Reviewed</h2>
+    <p>We believe integration quality and experiences should be transparent.  We think the days of searching for references are in the past.  Find all the integration info you need here to make decision or to build better integrations.</p>
+    <p><%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  </div>
+<% end %>
+
+<div class="row">
+  <% @vendors.each do |vendor| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag vendor.image.url(:medium), class: 'image'), vendor %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<!--  ORIGINAL INDEX PAGE
+
 <h1>Vendors</h1>
 
 <table>
@@ -28,3 +47,4 @@
 <br>
 
 <%= link_to 'New Vendor', new_vendor_path %>
+-->

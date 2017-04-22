@@ -1,19 +1,33 @@
-<%= image_tag @vendor.image.url(:medium) %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @vendor.image.url(:medium) %>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>Vendor name:</strong></td>
+                <td><%= @vendor.vendor_name %></td>
+              </tr>
+              <tr>
+                <td><strong>Vendor description:</strong></td>
+                <td><%= @vendor.vendor_description %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Vendor name:</strong>
-  <%= @vendor.vendor_name %>
-</p>
-
-<p>
-  <strong>Vendor description:</strong>
-  <%= @vendor.vendor_description %>
-</p>
+<!--
 
 <p>
   <strong>Vendor rating:</strong>
   <%= @vendor.vendor_rating %>
 </p>
-
+-->
 <%= link_to 'Edit', edit_vendor_path(@vendor) %> |
 <%= link_to 'Back', vendors_path %>
