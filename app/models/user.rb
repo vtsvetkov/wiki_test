@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :vendors
+  has_many :reviews #  , dependent: :destroy (this would be added if we wanted to delete all user's reviews when a user is deleted)
 end

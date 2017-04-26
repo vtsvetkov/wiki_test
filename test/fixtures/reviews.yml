@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1
+  comment: MyText
+  review_pov: MyString
+  integration_type: MyString
+  integration_name: MyString
+
+two:
+  rating: 1
+  comment: MyText
+  review_pov: MyString
+  integration_type: MyString
+  integration_name: MyString
